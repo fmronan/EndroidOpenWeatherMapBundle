@@ -1,0 +1,4 @@
+services:
+    endroid.openweathermap:
+        class: Endroid\OpenWeatherMap\OpenWeatherMap
+        arguments: [ %endroid.openweathermap.api_key%, %endroid.openweathermap.api_url%, %endroid.openweathermap.units% ]

@@ -1,0 +1,28 @@
+{
+    "name": "endroid/openweathermap-bundle",
+    "description": "Endroid OpenWeatherMap Bundle for Symfony",
+    "keywords": ["endroid", "openweathermap", "open", "weather", "map", "symfony", "bundle"],
+    "homepage": "https://github.com/endroid/EndroidOpenWeatherMapBundle",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeroen van den Enden",
+            "email": "info@endroid.nl",
+            "homepage": "http://endroid.nl/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "endroid/openweathermap": "~1.0"
+    },
+    "autoload": {
+        "psr-0": { "Endroid\\Bundle\\OpenWeatherMapBundle": "" }
+    },
+    "target-dir": "Endroid/Bundle/OpenWeatherMapBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
