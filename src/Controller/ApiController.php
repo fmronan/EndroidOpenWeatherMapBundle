@@ -9,6 +9,7 @@
 
 namespace Endroid\Bundle\OpenWeatherMapBundle\Controller;
 
+use Endroid\OpenWeatherMap\Client;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -36,15 +37,10 @@ class ApiController extends Controller
 
         $parameters['mode'] = $format;
 
-        $openWeatherMap = $this->get('endroid.openweathermap');
-        $response = $openWeatherMap->query($name, $parameters);
+        /** @var Client $client */
+        $client = $this->get('endroid.openweathermap.client');
+        $response = $client->query($name, $parameters);
 
-        return new Response(
-            $response->getContent(),
-            $response->getStatusCode(),
-            array(
-                'Content-Type' => $response->getHeader('Content-Type')
-            )
-        );
+        return new Response($response->getContent(), $response->getStatusCode(), array('Content-Type' => $response->getHeader('Content-Type')));
     }
 }

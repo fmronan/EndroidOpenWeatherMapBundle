@@ -7,9 +7,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Endroid\Bundle\OpenWeatherMapBundle\Tests\DependencyInjection;
+namespace Endroid\Bundle\OpenWeatherMapBundle;
 
-class OpenWeatherMapExtensionTest extends \PHPUnit_Framework_TestCase
+use PHPUnit_Framework_TestCase;
+
+class EndroidOpenWeatherMapBundleTest extends PHPUnit_Framework_TestCase
 {
     public function testNoTestsYet()
     {

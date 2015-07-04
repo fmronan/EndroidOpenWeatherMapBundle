@@ -65,9 +65,9 @@ public function registerBundles()
 
 ```yaml
 endroid_open_weather_map:
-    api_key: "..."
-    api_url: "..." // optional
-    units: "..." // optional
+    api_key: my_api_key
+    api_url:
+    units: ... // optional
 ```
 
 ## Routing
@@ -92,16 +92,22 @@ After installation and configuration, the service can be directly referenced fro
 ```php
 <?php
 
-$openWeatherMap = $this->get('endroid.openweathermap');
+use Endroid\OpenWeatherMap\Client;
+
+$client = $this->get('endroid.openweathermap.client');
 
 // Retrieve the current weather for Breda
-$weather = $openWeatherMap->getWeather('Breda,nl');
+$weather = $client->getWeather('Breda,nl');
 
 // Or retrieve the weather using the generic query method
-$response = $openWeatherMap->query('weather', array('q' => 'Breda,nl'));
+$response = $client->query('weather', array('q' => 'Breda,nl'));
 $weather = json_decode($response->getContent());
 
 ```
+
+## Versioning
+
+Semantic versioning ([semver](http://semver.org/)) is applied as much as possible.
 
 ## License
 

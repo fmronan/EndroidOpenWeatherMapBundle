@@ -14,17 +14,21 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('endroid_openweathermap');
 
-        $rootNode
-            ->children()
-                ->scalarNode('api_key')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('api_url')->defaultValue(null)->end()
-                ->scalarNode('units')->defaultValue(null)->end()
-            ->end();
+        $treeBuilder
+            ->root('endroid_openweathermap')
+                ->children()
+                    ->scalarNode('api_key')->isRequired()->cannotBeEmpty()->end()
+                    ->scalarNode('api_url')->defaultValue(null)->end()
+                    ->scalarNode('units')->defaultValue(null)->end()
+                ->end()
+        ;
 
         return $treeBuilder;
     }
