@@ -24,6 +24,7 @@ class EndroidOpenWeatherMapExtension extends Extension
         $container->setParameter('endroid.openweathermap.api_key', $config['api_key']);
         $container->setParameter('endroid.openweathermap.api_url', $config['api_url']);
         $container->setParameter('endroid.openweathermap.units', $config['units']);
+        $container->setParameter('endroid.openweathermap.langs', $config['langs']);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
