@@ -27,7 +27,7 @@ class Configuration implements ConfigurationInterface
                     ->scalarNode('api_key')->isRequired()->cannotBeEmpty()->end()
                     ->scalarNode('api_url')->defaultValue(null)->end()
                     ->scalarNode('units')->defaultValue(null)->end()
-                    ->scalarNode('langs')->defaultValue(null)->end()
+                    ->scalarNode('lang')->defaultValue(null)->end()
                 ->end()
         ;
 
